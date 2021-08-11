@@ -7,6 +7,12 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+/**
+ * @author rajiv
+ * This is the entry point of the app.
+ * txt file path will be provided from the command line 
+ *
+ */
 public class LogReader {
 
 	static final Logger logger = Logger.getLogger(LogReader.class);
