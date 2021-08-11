@@ -1,0 +1,31 @@
+2021-08-11 17:27:32 INFO  LogsFactory:43 - logger pojo added to list. Log id scba
+  2021-08-11 17:27:32 INFO  LogsFactory:43 - logger pojo added to list. Log id scbb
+  2021-08-11 17:27:32 INFO  LogsFactory:43 - logger pojo added to list. Log id scbc
+  2021-08-11 17:27:32 INFO  LogsFactory:51 - Log status 'started' is already fetched for Log id scba
+  2021-08-11 17:27:32 INFO  LogsFactory:51 - Log status 'finished' is already fetched for Log id scbc
+  2021-08-11 17:27:32 INFO  LogsFactory:51 - Log status 'started' is already fetched for Log id scbb
+  2021-08-11 17:27:32 INFO  ConnectDatabase:44 - Table created successfully
+  2021-08-11 17:27:32 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scba,0,1234,application_log,false
+  2021-08-11 17:27:32 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scbb,0,null,null,false
+  2021-08-11 17:27:32 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scbc,0,null,null,false
+  2021-08-11 17:27:39 INFO  LogsFactory:43 - logger pojo added to list. Log id scba
+  2021-08-11 17:27:39 INFO  LogsFactory:43 - logger pojo added to list. Log id scbb
+  2021-08-11 17:27:39 INFO  LogsFactory:43 - logger pojo added to list. Log id scbc
+  2021-08-11 17:27:39 INFO  LogsFactory:51 - Log status 'started' is already fetched for Log id scba
+  2021-08-11 17:27:39 INFO  ConnectDatabase:44 - Table created successfully
+  2021-08-11 17:27:39 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scba,0,1234,application_log,false
+  2021-08-11 17:27:39 INFO  LogsFactory:51 - Log status 'finished' is already fetched for Log id scbc
+  2021-08-11 17:27:39 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scbc,0,null,null,false
+  2021-08-11 17:27:39 INFO  LogsFactory:51 - Log status 'started' is already fetched for Log id scbb
+  2021-08-11 17:27:39 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scbb,0,null,null,false
+  2021-08-11 17:27:50 INFO  LogsFactory:43 - logger pojo added to list. Log id scba
+  2021-08-11 17:27:50 INFO  LogsFactory:43 - logger pojo added to list. Log id scbb
+  2021-08-11 17:27:50 INFO  LogsFactory:43 - logger pojo added to list. Log id scbc
+  2021-08-11 17:27:50 INFO  LogsFactory:51 - Log status 'started' is already fetched for Log id scba
+  2021-08-11 17:27:50 INFO  LogsFactory:51 - Log status 'finished' is already fetched for Log id scbc
+  2021-08-11 17:27:50 INFO  LogsFactory:51 - Log status 'started' is already fetched for Log id scbb
+  2021-08-11 17:27:50 INFO  ConnectDatabase:44 - Table created successfully
+  2021-08-11 17:27:50 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scba,0,1234,application_log,false
+  2021-08-11 17:27:50 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scbb,0,null,null,false
+  2021-08-11 17:27:50 INFO  ConnectDatabase:59 - Rows inserted successfully. with details :: scbc,0,null,null,false
+  

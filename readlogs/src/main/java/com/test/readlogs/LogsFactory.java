@@ -33,7 +33,6 @@ public class LogsFactory {
 		synchronized (this) {
 
 			if (LogsList.getLogList().size() > 0) {
-				System.err.println(LogsList.getLogList());
 				id = LogsList.getLogList().stream().filter(e -> e.getId().equalsIgnoreCase(pojo.getId())).findFirst()
 						.orElse(null);
 			}
