@@ -23,25 +23,45 @@ public class LogHandeler extends Thread {
 		this.logLine = logLine;
 	}
 
+	/**
+	 * Can have another thread to fetching and create POJO
+	 * 
+	 */
 	@Override
 	public void run() {
-		fetchLogAndCreatePojo();
+		fetchLogAndInsertIntoDB();
 	}
 
 	/**
-	 * Create POJO for each line of log and pass that pojo to Logs Factory
+	 * Create POJO for each line of log and pass that POJO to Logs Factory
 	 */
-	public void fetchLogAndCreatePojo() {
+	public void fetchLogAndInsertIntoDB() {
 
-		JsonReader reader = new JsonReader(new StringReader(logLine));
-		reader.setLenient(true);
+		LogPojo pojo = parseLogLineAndCreatePojo();
 
-		GsonBuilder builder = new GsonBuilder();
-		Gson gson = builder.create();
-		LogPojo pojo = gson.fromJson(reader, LogPojo.class);
-		logger.debug("Pojo is created for log line : " + logLine);
 		LogsFactory factory = new LogsFactory(pojo);
+
 		factory.getLogDetailsAndInsertIntoDB();
+
+	}
+
+	/**
+	 * @return parse the log line and create object
+	 */
+	public LogPojo parseLogLineAndCreatePojo() {
+		try {
+			JsonReader reader = new JsonReader(new StringReader(logLine));
+			reader.setLenient(true);
+
+			GsonBuilder builder = new GsonBuilder();
+			Gson gson = builder.create();
+			LogPojo pojo = gson.fromJson(reader, LogPojo.class);
+			logger.debug("Pojo is created for log line : " + logLine);
+			return pojo;
+		} catch (Exception e) {
+			logger.error("Error while parsing JSON log using Gson API " + e.getMessage());
+			return null;
+		}
 
 	}
 
