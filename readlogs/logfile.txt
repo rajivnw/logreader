@@ -1,0 +1,6 @@
+{"id":"scba","status":"started","type":"application_log","host":"1234","timestamp":1345865567}
+{"id":"scbb","status":"started","timestamp":1345865567}
+{"id":"scbc","status":"finished","timestamp":1345865567}
+{"id":"scba","status":"finished","type":"application_log","host":"1234","timestamp":1345865567}
+{"id":"scbc","status":"started","timestamp":1345865567}
+{"id":"scbb","status":"finished","timestamp":1345865567}
