@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import com.readlogs.db.ConnectDatabase;
 import com.readlogs.pojo.LogPojo;
 
 public abstract class LogsData implements ILog {
@@ -69,7 +68,7 @@ public abstract class LogsData implements ILog {
 			reader.setLenient(true);
 
 			LogPojo pojo = getJsonParser().fromJson(reader, LogPojo.class);
-			//logger.debug("Pojo is created for log line : " + logLine);
+			// logger.debug("Pojo is created for log line : " + logLine);
 			return pojo;
 		} catch (Exception e) {
 			logger.error("Error while parsing JSON log using Gson API " + e.getMessage());
@@ -162,28 +161,6 @@ public abstract class LogsData implements ILog {
 		String x = a + "." + b;
 		x = String.format("%.2f", new BigDecimal(x));
 		return x;
-	}
-
-	int dbCount = 0;
-
-	public void DBIntoInsert() {
-		System.out.println("Db insert thread started " + System.currentTimeMillis());
-
-		while (!isLogParserDone() || !getLogPojos().isEmpty()) {
-
-			LogPojo logPojo = getLogPojo();
-			if (logPojo != null) {
-				dbCount++;
-				ConnectDatabase.insertIntoDB(logPojo);
-			}
-
-		}
-
-		System.out.println("Log DB " + dbCount);
-		System.out.println("Db insert thread ended " + System.currentTimeMillis());
-
-		setEndtime();
-		System.out.println("Total time " + getTotalTimeTaken());
 	}
 
 }
