@@ -69,7 +69,7 @@ public abstract class LogsData implements ILog {
 			reader.setLenient(true);
 
 			LogPojo pojo = getJsonParser().fromJson(reader, LogPojo.class);
-			logger.debug("Pojo is created for log line : " + logLine);
+			//logger.debug("Pojo is created for log line : " + logLine);
 			return pojo;
 		} catch (Exception e) {
 			logger.error("Error while parsing JSON log using Gson API " + e.getMessage());

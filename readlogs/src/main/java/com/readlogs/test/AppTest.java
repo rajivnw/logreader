@@ -1,5 +1,6 @@
 package com.readlogs.test;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import com.readlogs.data.ILog;
@@ -13,6 +14,7 @@ public class AppTest {
 
 	public static void main(String[] args) {
 		//String logFile = System.getProperty("logfile");
+		BasicConfigurator.configure();
 
 		 String logFile = "logfile.txt";
 		ILog logData = new TextLogFile(logFile);
@@ -24,6 +26,8 @@ public class AppTest {
 		reader.start();
 		parser.start();
 		dbInsert.start();
+		
+	
 
 	}
 
