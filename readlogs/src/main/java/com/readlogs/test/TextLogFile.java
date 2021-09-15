@@ -12,12 +12,12 @@ public class TextLogFile extends LogsData {
 
 	private final String extentionExpected = ".txt";
 
-	public TextLogFile(String filePath) {
-		super(filePath);
+	public TextLogFile() {
+		super(getLogFile());
 	}
 
 	@Override
-	protected void isFileExtentionCorrect() {
+	protected void validateFileExtentionCorrect() {
 
 		String extentionActual = getFilePath().substring(getFilePath().lastIndexOf("."), getFilePath().length());
 		String fileName = getFilePath().substring(0, getFilePath().lastIndexOf("."));
@@ -36,6 +36,20 @@ public class TextLogFile extends LogsData {
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		return gson;
+	}
+
+	/**
+	 * Removed the hardcoded "logfile.txt" file name and uncomment
+	 * System.getProperty("logfile") in order to get the file path from command line
+	 * for example -Dlogfile="<log_file_path>"
+	 * 
+	 * @return logfile
+	 */
+	static String getLogFile() {
+		//
+		String logFile = "logfile.txt"; // System.getProperty("logfile");
+		return logFile;
+
 	}
 
 }

@@ -3,7 +3,7 @@ package com.readlogs.threads;
 import org.apache.log4j.Logger;
 
 import com.readlogs.data.ILog;
-import com.readlogs.db.ConnectDatabase;
+import com.readlogs.db.DBInsert;
 import com.readlogs.pojo.LogPojo;
 
 public class LogDbInsertion extends Thread {
@@ -28,7 +28,7 @@ public class LogDbInsertion extends Thread {
 			LogPojo logPojo = logData.getLogPojo();
 			if (logPojo != null) {
 				count++;
-				ConnectDatabase.insertIntoDB(logPojo);
+				DBInsert.insertIntoDB(logPojo);
 			}
 
 		}

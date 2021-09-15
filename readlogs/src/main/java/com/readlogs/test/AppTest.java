@@ -13,11 +13,10 @@ public class AppTest {
 	static final Logger logger = Logger.getLogger(AppTest.class);
 
 	public static void main(String[] args) {
-		//String logFile = System.getProperty("logfile");
+
 		BasicConfigurator.configure();
 
-		 String logFile = "logfile.txt";
-		ILog logData = new TextLogFile(logFile);
+		ILog logData = new TextLogFile();
 
 		LogFileReader reader = new LogFileReader(logData);
 		LogParser parser = new LogParser(logData);
@@ -26,8 +25,6 @@ public class AppTest {
 		reader.start();
 		parser.start();
 		dbInsert.start();
-		
-	
 
 	}
 

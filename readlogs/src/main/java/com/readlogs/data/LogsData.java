@@ -35,12 +35,14 @@ public abstract class LogsData implements ILog {
 		sanatiycheckForFile();
 	}
 
+	protected abstract void validateFileExtentionCorrect();
+
+	protected abstract Gson getJsonParser();
+
 	public void sanatiycheckForFile() {
 		validateFilePresent();
-		isFileExtentionCorrect();
+		validateFileExtentionCorrect();
 	}
-
-	protected abstract void isFileExtentionCorrect();
 
 	public String getFilePath() {
 		return filePath;
@@ -76,8 +78,6 @@ public abstract class LogsData implements ILog {
 		}
 
 	}
-
-	protected abstract Gson getJsonParser();
 
 	@Override
 	public void addLogLine(String logLine) {
