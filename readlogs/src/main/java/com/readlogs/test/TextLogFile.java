@@ -13,6 +13,7 @@ public class TextLogFile extends LogsData {
 	private final String extentionExpected = ".txt";
 
 	public TextLogFile() {
+		
 		super(getLogFile());
 	}
 
